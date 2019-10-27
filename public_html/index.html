@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Nowodworski Estates - Zadania rekrutacyjne</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Red+Hat+Display:400,500,700&display=swap&subset=latin-ext" rel="stylesheet">
+  <link rel="stylesheet" href="build/style.css">
+    
+</head>
+
+<body>
+  <div class="main-container w-100">
+    <div class="content-box">
+      <div id="section_header">
+        <h1 class="text-center text-uppercase narrow w-100 m-0">Oferty Nowodworski Estates</h1>
+      </div>
+      <div class="container-fluid narrow">
+        <div id="estate_adverts" class="row"></div>
+        <h2 class="text-center">Wybierz, co chcesz zrobić</h2>
+        <div id="choices">
+          <ul class="nav nav-tabs">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="tab" href="#create">Dodaj nowe ogłoszenie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#edit">Edytuj ogłoszenie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#delete">Usuń ogłoszenie</a>
+            </li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane container active" id="create">
+              <form id="sendingForm" class="col-md-6 col-12 px-0">
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="city" class="col-12 p-0">Miasto</label>
+                  <input type="text" class="form-control col-12" name="city" id="sendCity" required />
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="street" class="col-12 pl-0">Ulica</label>
+                  <input type="text" class="form-control col-12" name="street" id="sendStreet" required />
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="property" class="col-12 pl-0">Nr domu</label>
+                  <input type="text" class="form-control col-12" name="property" id="sendProperty" required />
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="apartment" class="col-12 pl-0">Nr lokalu</label>
+                  <input type="text" class="form-control col-12" name="apartment" id="sendApartment"/>
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="price" class="col-12 pl-0">Cena</label>
+                  <input type="text" class="form-control col-12" name="price" id="sendPrice" required />
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="type" class="col-12 pl-0">Typ</label>
+                  <select class="form-control custom-field col-12" name="type" id="sendType" required >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="description" class="col-12 pl-0">Opis</label>
+                  <input type="text" class="form-control col-12" name="description"  id="sendDescription" required />
+                </div>
+                <div class="form-group d-flex justify-content-end mb-0">
+                  <button type="submit" class="btn btn-primary">Dodaj</button>
+                </div>
+              </form>
+            </div>
+            <div class="tab-pane container fade" id="edit">
+                <form id="updatingForm" class="col-md-6 col-12 px-0">
+                  <div id="updateIdGroup" class="form-group d-flex flex-wrap align-items-center">
+                    <label for="updateId" class="col-12 p-0">Wybierz ofertę, którą chcesz edytować:</label>
+                  </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="city" class="col-12 p-0">Miasto</label>
+                  <input type="text" class="form-control col-12" name="city" id="updateCity" />
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="street" class="col-12 pl-0">Ulica</label>
+                  <input type="text" class="form-control col-12" name="street" id="updateStreet" />
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="property" class="col-12 pl-0">Nr domu</label>
+                  <input type="text" class="form-control col-12" name="property" id="updateProperty" />
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="apartment" class="col-12 pl-0">Nr lokalu</label>
+                  <input type="text" class="form-control col-12" name="apartment" id="updateApartment"/>
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="price" class="col-12 pl-0">Cena</label>
+                  <input type="text" class="form-control col-12" name="price" id="updatePrice" />
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="type" class="col-12 pl-0">Typ</label>
+                  <select class="form-control custom-field col-12" name="type" id="updateType" >
+                    <option value="0"></option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                  </select>
+                </div>
+                <div class="form-group d-flex flex-wrap align-items-center">
+                  <label for="description" class="col-12 pl-0">Opis</label>
+                  <input type="text" class="form-control col-12" name="description"  id="updateDescription" />
+                </div>
+                <div class="form-group d-flex justify-content-end mb-0">
+                  <button type="submit" class="btn btn-primary">Edytuj</button>
+                </div>
+              </form>
+            </div>
+            <div class="tab-pane container fade" id="delete">
+              <form id="deletingForm" class="col-md-6 col-12 px-0">
+                <div id="deleteIdGroup" class="form-group d-flex flex-wrap align-items-center">
+                  <label for="deleteId" class="col-12 p-0">Wybierz ofertę, którą chcesz edytować:</label>
+                </div>
+                <div class="form-group d-flex justify-content-end mb-0">
+                  <button type="submit" class="btn btn-primary">Usuń</button>
+                </div>
+              </form>
+              <div class="deleteAllBox w-100 mt-5">
+                <div class="deleteAll col-md-6 col-12 px-0 mx-auto">lub <button id="deleteAll" type="button" class="btn btn-secondary ml-3">Usuń wszystkie</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer d-flex w-100 flex-wrap justify-content-between col-12">
+      <div class="footer-left col-sm-6 pl-0"><p>Zadanie rekrutacyjne</p></div>
+      <div class="footer-right text-right col-sm-6 pr-0"><p>Realizacja: Joanna Cioś</p></div>
+    </div>
+  </div>
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="/scripts.js"></script>
+</body> 
+
+</html>

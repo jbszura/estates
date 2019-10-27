@@ -1,0 +1,198 @@
+$link-color: #00ab58;
+$link-hover-color: #F5CB5C;
+$body-color: #000000;
+$color-light: #DEEDE6;
+$color-gray: #DDDDDD;
+$color-dark: #3A2E39;
+$default-font-family: 'Red Hat Display', Arial, Helvetica, Tahoma, sans-serif;
+
+body{
+  font-size: 16px;
+  font-family: $default-font-family;
+  line-height:120%;
+  color: $body-color;
+}
+
+h1{
+  letter-spacing:2px;
+  font-size:50px;
+  @media screen and (max-width: 575px){
+    font-size: 30px;
+  }
+}
+
+h2{
+  font-size: 40px;
+  margin-bottom:30px;
+}
+
+h3{
+  font-size: 28px;
+  margin-bottom:10px;
+}
+
+.transition{
+  transition: all 0.3s ease;
+}
+
+a{
+  @extend .transition;
+  color: $link-color;
+  &:focus, &:hover, &:disabled{
+    color: $link-hover-color;
+    text-decoration:none;
+  }
+}
+.btn{
+  @extend .transition;
+  border-radius:0;
+  text-transform:uppercase;
+  font-weight:700;
+  letter-spacing:1px;
+  font-size:14px;
+  line-height:120%;
+  padding:10px 15px;
+  min-width:88px;
+  text-align:center;
+  border:none;
+}
+.btn-primary:not(:disabled){
+  background: $link-color;
+  &:hover,&:not(:disabled):focus, &:not(:disabled):active{
+    background: $link-hover-color;
+    box-shadow:none;
+  }
+}
+
+#section_header{
+  height:600px;
+  position:relative;
+  background: rgba(0,0,0,0.6) url("../images/lights-shelves.jpg") no-repeat center;
+  background-blend-mode: multiply;
+  @media screen and (max-width: 575px){
+    height: 300px;
+  }
+  h1{
+    color:#fff;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+  }
+}
+
+.narrow{
+  max-width:1200px;
+  margin: 0 auto;
+}
+
+.content-box{
+  padding-bottom:100px;
+}
+
+#estate_adverts{
+  padding: 55px 0px;
+  .card_container{
+    padding:15px;
+    .card{
+      border-radius:0;
+      border:1px solid $link-color;
+      .card-header{
+        padding: 10px 15px;
+        background: $color-light;
+        border:none;
+        p{
+          margin-bottom:0;
+        }
+      }
+      .card-content{
+        padding: 10px 0px;
+        p{
+          &:last-of-type{
+            margin-bottom:0;
+          }
+          &.estate_price{
+            text-align:right;
+            font-weight:700;
+            color: $link-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-tabs{
+  .nav-item{
+    .nav-link{
+      border-radius:0;
+      border:1px solid $color-gray;
+      margin: 0 5px;
+      &.active{
+        font-weight:700;
+      }
+    }
+    &:first-child{
+      .nav-link{
+        margin-left:0;
+      }
+    }
+    &:last-child{
+      .nav-link{
+        margin-right:0;
+      }
+    }
+    @media screen and (max-width: 600px){
+      width:100%;
+      .nav-link{
+         margin:0;
+      }
+    }
+  }
+}
+.tab-content{
+  border: 1px solid $color-gray;
+  border-top:0;
+  padding: 20px 15px;
+  .tab-pane{
+    &.active{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+  }
+}
+
+form{
+  .form-group{
+    label{
+      font-size:14px;
+      margin-bottom:5px;
+      padding: 0 10px;
+    }
+    input, select{
+      height:38px;
+      border-radius: 0;
+      border: 1px solid $color-gray;
+      padding:  5px 10px;
+      color: $body-color;
+      &:focus{
+        border-color:$link-color;
+        box-shadow: 0 0 3px 0 $link-color;
+      }
+    }
+    select{
+      border: 1px solid $color-gray;
+    }
+  }
+}
+
+.footer{
+  background: $color-dark;
+  padding: 30px 15px;
+  color: #fff;
+  font-size: 14px;
+  p{
+    margin-bottom:0;
+  }
+}
